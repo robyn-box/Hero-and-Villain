@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>Superhero VS Supervillian</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  {{!-- <link href="/stylesheets/style.css" type="text/css" rel="stylesheet"> --}}
+  <link href="/stylesheets/style.css" type="text/css" rel="stylesheet">
   <link rel='shortcut icon' type='image/x-icon' href='/images/favicon.png' />
 </head>
 
@@ -17,7 +17,7 @@
        <li><a href="/">Browse</a></li>
         
         
-        <li><a href="/">Create A Superhero</a></li>
+        <li><a href="/createHero">Create A Superhero</a></li>
         <li><a href="/">Create A Supervillian</a></li>
         <li><a href="">Add A Hero Power</a></li>
         <li><a href="">Add A Villian Power</a></li>
@@ -29,14 +29,10 @@
     </header>
     <main>
       <h1>Browser</h1>
-      {{!-- <form action="/search" method="GET">
-        <input type="text" class="search" name="search" placeholder="Search...">
-        <input type="number" name="from" class="difficulty" placeholder="Difficulty from...">
-        <span>-</span>
-        <input type="number" name="to" class="difficulty" placeholder="Difficulty to...">
-        <input type="submit" value="search">
-      </form> --}}
-      
+   
+      {{#each superheroes}}
+      {{> superheroTemplate superhero=this}}
+      {{/each}}
      
 
     </main>
