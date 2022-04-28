@@ -27,12 +27,7 @@ const superheroSchema = new mongoose.Schema({
             message: props => `${props.value} can only be letters and numbers`
         },
     },
-    skillLevel: {
-        type: String,
-        required: false,
-        enum: {values: [beginner, intermediate, advanced], message: `{value} must be choosen between beginner, intermediate or advanced` }
-    },
-    superheroPowers: [{type: mongoose.Schema.Types.ObjectId, ref: 'SuperheroPower'}],
+    superheroPowers: [{type: mongoose.Schema.Types.ObjectId, ref: 'Superhero'}],
     creatorId: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
 })
 

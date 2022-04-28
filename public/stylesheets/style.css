@@ -1,21 +1,28 @@
-.div{
+.div{ 
   font: 40px;
   font-size: larger;
   text-align: center;
+}
+div.container {
+  display: block;
 }
 
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-image: url("https://th.bing.com/th/id/R.47bc6d32e60d207022d833aff32e31ba?rik=tZgoHUXemActRQ&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fJ07KWD6.jpg&ehk=0FiWxYV%2bzZcgZvlFU504QuT6I18FIrZo1UFo7xcT5cQ%3d&risl=&pid=ImgRaw&r=0");
+  /* background-image: url("https://th.bing.com/th/id/R.47bc6d32e60d207022d833aff32e31ba?rik=tZgoHUXemActRQ&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fJ07KWD6.jpg&ehk=0FiWxYV%2bzZcgZvlFU504QuT6I18FIrZo1UFo7xcT5cQ%3d&risl=&pid=ImgRaw&r=0"); */
 
   background-repeat: no-repeat;
   background-position: center;
-  
-  
 }
 
 a {
   color: yellow;
+}
+
+img.superhero {
+  display: block;
+  margin: 4px auto;
+  text-align: center;
 }
 
