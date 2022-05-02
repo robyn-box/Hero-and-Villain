@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>SUPERHEROES VS SUPERVILLAINS</title>
+  <link href="/stylesheets/style.css" type="text/css" rel="stylesheet">
+  <link rel='shortcut icon' type='image/x-icon' href='#' />
+</head>
+
+<body>
+  <h1>SUPERHERO VS SUPERVILLAIN</h1>
+  <div class="container">
+    <header>
+      <ul>
+       <li><a href="/">Browse</a></li>
+        <li><a href="/createhero">Create A Superhero</a></li>
+        <li><a href="/createvillain">Create A Supervillain</a></li>
+        <li><a href="/heropowercreate">Add A Hero Power</a></li>
+        <li><a href="/villainpowercreate">Add A Villain Power</a></li>
+    
+        <li><a href="">Login</a></li>
+        <li><a href="">Register</a></li>
+        
+      </ul>
+      </ul>
+    </header>
+    <main>
+      <h1>{{superhero.name}}</h1>
+      <img class="superhero" src="{{superhero.imageUrl}}">
+      <div class="details">
+        <p><span>Background:</span> {{superhero.background}}</p>
+       
+        <a class="btn" href="/">Back</a>
+        {{#if matchedUser}}
+        <a class="btn" href="/heropowerattach/{{superhero._id}}">Attach Power</a>
+        <a class="btn" href="/heroedit/{{superhero.id}}">Edit Your Superhero</a>
+        <a class="btn" href="/herodelete/{{superhero.id}}">Delete Your Superhero</a>
+        {{/if}}
+      </div>
+      <h2>Hero Powers</h2>
+               
+                {{#if superhero.heropowers.length}}
+                {{#each superhero.heropowers}}
+                {{> heroPowers heropower=this}}
+                {{/each}}
+                {{else}}
+                <h3 class="italic">This superhero doesn't have any super powers yet</h3>
+                {{/if}}
+            </div>
+    </main>
+  </div>
+  <footer>SUPERHEROES VS SUPERVILLAINS</footer>
+</body>

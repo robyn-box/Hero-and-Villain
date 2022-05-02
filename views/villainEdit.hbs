@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Villain Page</title>
+  <link href="/stylesheets/style.css" type="text/css" rel="stylesheet">
+  <link rel='shortcut icon' type='image/x-icon' href='#' />
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <ul>
+          <li><a href="/">Browse</a></li>
+         <li><a href="/createhero">Create A Superhero</a></li>
+        <li><a href="/createvillain">Create A Supervillain</a></li>
+        <li><a href="/heropowercreate">Add A Hero Power</a></li>
+        <li><a href="/villainpowercreate">Add A Villain Power</a></li>
+    
+        <li><a href="">Login</a></li>
+        <li><a href="">Register</a></li>
+      </ul>
+    </header>
+    <main>
+	<h1>Edit Villain</h1>
+<div class="form">
+  <form action='/villainedit/{{supervillain.id}}' method="POST">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" value="{{supervillain.name}}">
+    <label for="name">Background</label>
+    <textarea id="name" name="background">{{supervillain.background}}</textarea>
+    <label for="image">ImageUrl</label>
+    <input type="text" id="image" name="imageUrl" value="{{supervillain.imageUrl}}">
+    <input type="submit" value="villainedit">
+  </form>
+</div>
+    </main>
+  </div>
+  <footer>SUPERHEROES VS SUPERVILLAINS</footer>
+
+</body>
+
+</html>

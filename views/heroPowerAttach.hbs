@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Attach A Hero Power</title>
+  <link href="/stylesheets/style.css" type="text/css" rel="stylesheet">
+  <link rel='shortcut icon' type='image/x-icon' href='#' />
+</head>
+
+<body>
+  <h1>SUPERHERO VS SUPERVILLAIN</h1>
+  <div class="container">
+    <header>
+      <ul>
+       <li><a href="/">Browse</a></li>
+        <li><a href="/createhero">Create A Superhero</a></li>
+        <li><a href="/createvillain">Create A Supervillain</a></li>
+        <li><a href="/heropowercreate">Add A Hero Power</a></li>
+        <li><a href="/villainpowercreate">Add A Villain Power</a></li>
+    
+        <li><a href="">Login</a></li>
+        <li><a href="">Register</a></li>
+      </ul>
+    </header>
+    <main>
+      <h1>Attach a new hero power</h1>
+      <div class="form">
+        <h2>{{superhero.name}}</h2>
+        <img class="superhero" src="{{superhero.imageUrl}}">
+        <form action='/heropowerattach/{{superhero.id}}' method="POST">
+          <label for="heropower">Hero Power</label>
+          <select id="heropower" name="heropower">
+              {{#each heropowers}}
+          {{> heroPowerTemplate heropower=this}}
+        {{/each}}
+          </select>
+          <input type="submit" value="heropowerattach">
+        </form>
+        <h3 class="italic">This Hero has no special powers to show yet...
+        </h3>
+        <a class="btn" href="/">Back</a>
+      </div>
+    </main>
+  </div>
+  <footer>SUPERHEROES VS SUPERVILLAINS</footer>
+
+</body>
+
+</html>

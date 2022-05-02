@@ -1,33 +1,27 @@
 const mongoose = require('mongoose')
 const validator = require('validatorjs')
+const Heropower = require('./Heropower')
+const User = require('./User')
 
 const superheroSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
-        minlength: [ 5, "Name must be at least 5 characters"],
+        minlength: [2, "Must be at least 2 characters"],
+        match: [/^[\w+\d+/]+/, "Must be alphanumeric"]
     },
     imageUrl: {
         type: String,
         required: true,
-        validator: function (v) {
-            return /^http|https/.test(v)
-        },
-        message: props => `${props.value} enter a valid URL`
+        match: [/^https?:\/\/.*/g, "Must be a valid web address"]
     },
     background: {
         type: String,
         required: true,
-        validate: {
-            validator: function(v) {
-                return new Promise(function(resolve, reject) {
-                    resolve (/^[\w+\d+/]+/.test(v))
-                })
-            },
-            message: props => `${props.value} can only be letters and numbers`
-        },
-    },
-    superheroPowers: [{type: mongoose.Schema.Types.ObjectId, ref: 'Superhero'}],
+        minlength: [30, "Must be a minimum of 30 characters"],
+        match: [/^[\w+\d+/]+/, "Must be alphanumeric"]
+    },    
+    heropowers: [{type: mongoose.Schema.Types.ObjectId, ref: 'Heropower'}],
     creatorId: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
 })
 
