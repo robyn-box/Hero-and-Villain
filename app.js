@@ -5,19 +5,25 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose')
-const hbs = require('handlebars')
+const hbs = require('hbs')
 const saltRounds = +process.env.SALT
 const secret = process.env.SECRET
 
 const indexRouter = require('./routes/index');
 const aboutRouter = require('./routes/about');
-var usersRouter = require('./routes/users');
-const createHeroRouter = require('./routes/createHero')
-// const createVillianRouter = require('./routes/createVillian')
-// const heroPowerCreateRouter = require('./routes/heroPowerCreate');
-// const villianPowerCreateRouter = require('./routes/villainPowerCreate')
-// const heroPowerAttachRouter = require('./routes/heroPowerAttach');
-// const villianPowerAttachRouter = require('./routes/villainPowerAttach')
+const usersRouter = require('./routes/users');
+const createherorouter = require('./routes/createhero')
+const createvillainrouter = require('./routes/createvillain')
+const heropowercreaterouter = require('./routes/heropowercreate');
+const villainpowercreaterouter = require('./routes/villainpowercreate')
+const herodetailsrouter = require('./routes/herodetails')
+const villaindetailsrouter = require('./routes/villaindetails')
+const heropowerattachrouter = require('./routes/heropowerattach');
+const villainpowerattachrouter = require('./routes/villainpowerattach')
+const heroeditrouter = require('./routes/heroedit')
+const villaineditrouter = require('./routes/villainedit')
+const herodeleterouter = require('./routes/herodelete')
+const villaindeleterouter = require('./routes/villaindelete')
 
 const app = express();
 
@@ -34,7 +40,7 @@ mongoose.connect(process.env.DB_URI , {
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-// hbs.registerPartials(__dirname + /views/partials)
+hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'hbs');
 
 app.use(logger('dev'));
@@ -46,13 +52,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/about', aboutRouter);
-app.use('/createHero', createHeroRouter);
-// app.use('/createVillian', createVillianRouter);
-// app.use('/heroPowerCreate', heroPowerCreateRouter);
-// app.use('/villianPowerCreate', villianPowerCreateRouter);
-// app.use('/heroPowerAttach', heroPowerAttachRouter);
-// app.use('/villianPowerAttach', villianPowerAttachRouter)
-
+app.use('/createhero', createherorouter);
+app.use('/createvillain', createvillainrouter);
+app.use('/heropowercreate', heropowercreaterouter);
+app.use('/villainpowercreate', villainpowercreaterouter);
+app.use('/herodetails', herodetailsrouter)
+app.use('/villaindetails', villaindetailsrouter)
+app.use('/heropowerattach', heropowerattachrouter);
+app.use('/villainpowerattach', villainpowerattachrouter)
+app.use('/heroedit', heroeditrouter)
+app.use('/villainedit', villaineditrouter)
+app.use('/herodelete', herodeleterouter)
+app.use('/villaindelete', villaindeleterouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -67,8 +78,11 @@ app.use(function(err, req, res, next) {
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+  res.status(500).json({
+    message: err.message,
+    error: err
+  });
+ 
 });
 
 module.exports = app;

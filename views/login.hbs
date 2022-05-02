@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <link href="/stylesheets/site.css" type="text/css" rel="stylesheet">
+  <link rel='shortcut icon' type='image/x-icon' href='./images/favicon.png' />
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <ul>
+        <li><a href="/">Browse</a></li>
+        <li><a href="/createhero">Create A Superhero</a></li>
+        <li><a href="/createvillain">Create A Supervillain</a></li>
+        <li><a href="/heropowercreate">Add A Hero Power</a></li>
+        <li><a href="/villainpowercreate">Add A Villain Power</a></li>
+    
+        <li><a href="/users/login">Login</a></li>
+        <li><a href="/users/register">Register</a></li>
+      </ul>
+    </header>
+    <main>
+	<h1>Login Form</h1>
+<div class="form">
+    <form action='/users/login' method="POST">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username">
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password">
+        <input type="submit" value="Login">
+    </form>
+    
+    <div>
+     
+    </div>
+  
+</div>
+    </main>
+  </div>
+  <footer>SUPERHEROES VS SUPERVILLAINS</footer>
+
+</body>
+
+</html>

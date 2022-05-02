@@ -17,12 +17,41 @@ body {
 }
 
 a {
-  color: yellow;
+  color: red;
+  font: 40px;
 }
 
 img.superhero {
   display: block;
-  margin: 4px auto;
+  margin: 4px;
   text-align: center;
+}
+
+img.supervillain {
+  display: block;
+  margin: 4px;
+  text-align: center;
+}
+
+img {
+  height: 200px;
+  width: 200px
+}
+div.superhero {
+  display: inline-block;
+  border: 1px solid #2b415433;
+  background: white;
+  width: 23%;
+  vertical-align: top;
+  margin-bottom: 4px;
+}
+
+div.supervillain {
+  display: inline-block;
+  border: 1px solid #2b415433;
+  background: white;
+  width: 23%;
+  vertical-align: top;
+  margin-bottom: 4px;
 }
 

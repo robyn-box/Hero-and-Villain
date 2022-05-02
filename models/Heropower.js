@@ -7,41 +7,22 @@ const heropowerSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
-        minlength: [4, "Name of power must be at least 4 characters"],
-    },
-    validate: {
-        validator: function(v) {
-            return new Promise(function (resolve, reject) {
-                resolve (/^[\w+\d+]+/.test(v))
-            })
-        },
-        message: props => `${props.value} must be only letters or numbers`
+        minlength: [4, "Name must be at least 4 characters"],
+        match: [/^[\w+\d+/]+/, "Must be alphanumeric"]
     },
     description: {
         type: String,
         required: true,
-        validate: {
-            validator: function(v) {
-                return new Promise(function (resolve, reject) {
-                    resolve (/^[\w+\d+]+/.test(v))
-                })
-            },
-            message: props => `${props.value} must be only letters or numbers`
-        },
+        minlength: [30, "Description must be at least 30 characters"],
+        match: [/^[\w+\d+/]+/, "Must be alphanumeric"]
     },
     imageUrl: {
         type: String,
         required: true,
-        validate: {
-            validator: function(v) {
-                return new Promise(function (resolve, reject) {
-                    resolve (/^[\w+\d+]+/.test(v))
-                })
-            },
-            message: props => `${props.value} must be only letters or numbers`
-        },
+        match: [/^https?:\/\/.*/g, "Must be a valid web address"]
     },
-    heropower: [{type: mongoose.Schema.Types.ObjectId, ref: 'Superhero'}]
+    heropowers: [{type: mongoose.Schema.Types.ObjectId, ref: 'Superhero'}]
 })
+
 
 module.exports = mongoose.model('Heropower', heropowerSchema)
