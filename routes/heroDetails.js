@@ -5,7 +5,8 @@ const Superhero = require('../models/Superhero')
 const verifyUser = require('../middleware/verifyUser')
 const jwt = require('jsonwebtoken')
 const secret = process.env.SECRET
-const verifyToken = require('../middleware/verifyToken')
+const verifyToken = require('../middleware/verifyToken');
+const Heropower = require('../models/Heropower');
 
 
 router.get('/:id', verifyUser, getHeroById, async function(req, res, next) {
@@ -14,6 +15,7 @@ router.get('/:id', verifyUser, getHeroById, async function(req, res, next) {
     let matchedUser = false
     let loggedIn = req.loggedIn
     let verifyToken = req.cookies.verifyToken
+   
 
     if(verifyToken) {
         userId = jwt.verify(verifyToken, secret, {complete: true}) 

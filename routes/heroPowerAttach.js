@@ -3,18 +3,22 @@ const Heropower = require('../models/Heropower');
 const router = express.Router()
 const Superhero = require('../models/Superhero')
 const getHeroById = require('../middleware/getHeroById')
+const verifyUser = require('../middleware/verifyUser')
 
 
-router.get("/:id", getHeroById, async function(req, res, next) {
+router.get("/:id", verifyUser, getHeroById, async function(req, res, next) {
+    let loggedIn = req.loggedIn;
+    if (loggedIn === true) {
+        let superhero = res.superhero
+        // superhero = await Superhero.findById(superhero)
+        let heropowers = await Heropower.find({})
+        // // console.log(superhero, heropowers)
+        // console.log("heropowers", heropowers)
+        res.render('heropowerattach', { superhero, heropowers, loggedIn})
+    } else {
+        res.redirect("/")
+    }
 
-    let superhero = res.superhero
-    superhero = await Superhero.findById(superhero)
-    let heropowers = [];
-    heropowers = await Heropower.find({})
-    // console.log(superhero, heropowers)
-
-    
-    res.render('heropowerattach', { superhero: superhero, heropowers: heropowers})
 })
 
 router.post("/:id", getHeroById, async function (req, res, next) {

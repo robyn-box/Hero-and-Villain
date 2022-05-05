@@ -2,17 +2,23 @@ const express = require('express')
 const Villainpower = require('../models/Villainpower')
 const router = express.Router()
 const Supervillain = require('../models/Supervillain')
+const verifyUser = require('../middleware/verifyUser')
 const getVillainById = require('../middleware/getVillainById')
 
 
-router.get("/:id", getVillainById, async function (req, res, next) {
-    let supervillain = res.supervillain
-    supervillain = await Supervillain.findById(supervillain)
-    let villainpowers = []
-    villainpowers = await Villainpower.find({})
-    console.log(supervillain, villainpowers)
-    
-    res.render('villainpowerattach', {supervillain: supervillain, villainpowers: villainpowers})
+router.get("/:id", verifyUser, getVillainById, async function (req, res, next) {
+    let loggedIn = req.loggedIn
+    if (loggedIn === true) {
+        let supervillain = res.supervillain
+        // supervillain = await Supervillain.findById(supervillain)
+        let villainpowers =  await Villainpower.find({})
+        // console.log(supervillain, villainpowers)
+        
+        res.render('villainpowerattach', {supervillain, villainpowers, loggedIn})
+
+    } else {
+        res.redirect("/")
+    }
 })
 
 router.post("/:id", getVillainById, async function (req, res, next) {

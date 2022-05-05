@@ -22,15 +22,20 @@ router.post('/', verifyUser, async function (req, res, next) {
     let verifiedUser = jwt.verify(verifyToken, secret, {complete: true})
     // console.log(verifyToken, verifiedUser)
     // console.log(verifiedUser.payload.id)
-
+    console.log(req.body)
     
-    const { name, imageUrl, background} = req.body
+    const { name, imageUrl, age, height, weight, gender, affiliation} = req.body
     const aHero = new Superhero({
         name: req.body.name,
         imageUrl: req.body.imageUrl,
-        background: req.body.background,
+        age: req.body.age,
+        height: req.body.height,
+        weight: req.body.weight,
+        gender: req.body.gender,
+        affiliation: req.body.affiliation,
         heropowers: [],
         creatorId: verifiedUser.payload.id
+        
         
     })
     
@@ -39,6 +44,7 @@ router.post('/', verifyUser, async function (req, res, next) {
             console.log(err)
             res.render('index', {message: err})
         } else {
+            console.log(aHero)
             console.log("Hero Created")
             res.redirect("/")
         }

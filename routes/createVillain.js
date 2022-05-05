@@ -20,12 +20,16 @@ router.post('/', verifyUser, async function (req, res, next) {
     console.log(req.body)
     let verifyToken = req.cookies.verifyToken
     let verifiedUser = jwt.verify(verifyToken, secret, {complete: true})
-    const { name, imageUrl, background } = req.body
+    const { name, imageUrl, age, height, weight, gender, affiliation} = req.body
     
     const aVillain = new Supervillain({
         name: req.body.name,
         imageUrl: req.body.imageUrl,
-        background: req.body.background,
+        age: req.body.age,
+        height: req.body.height,
+        weight: req.body.weight,
+        gender: req.body.gender,
+        affiliation: req.body.affiliation,
         villainpowers: [],
         creatorId: verifiedUser.payload.id
     })
