@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>SUPERHEROES VS SUPERVILLAINS</title>
+  <title>Attach A Hero Power</title>
   <link href="/stylesheets/style.css" type="text/css" rel="stylesheet">
   <link rel='shortcut icon' type='image/x-icon' href='#' />
 </head>
@@ -21,39 +21,35 @@
     
         <li><a href="">Login</a></li>
         <li><a href="">Register</a></li>
-        
-      </ul>
       </ul>
     </header>
     <main>
-      <h1>{{superhero.name}}</h1>
-      <img class="superhero" src="{{superhero.imageUrl}}">
-      <div class="details">
-        <p><span>Age</span> {{superhero.age}}</p>
-        <p><span>Height</span> {{superhero.height}}</p>
-        <p><span>Weight</span> {{superhero.weight}}</p>
-        <p><span>Gender</span> {{superhero.gender}}</p>
-        <p><span>Affiliation</span> {{superhero.affiliation}}</p>
-       
-        <a class="btn" href="/">Back</a>
-        {{#if matchedUser}}
-        <a class="btn" href="/heropowerattach/{{superhero._id}}">Attach Power</a>
-         <a class="btn" href="/heropowerdetach/{{superhero._id}}">Detach Power</a>
-        <a class="btn" href="/heroedit/{{superhero.id}}">Edit Your Superhero</a>
-        <a class="btn" href="/herodelete/{{superhero.id}}">Delete Your Superhero</a>
-        {{/if}}
-      </div>
-      <h2>Hero Powers</h2>
-               
-                {{#if superhero.heropowers.length}}
+      <h1>Detach a new hero power</h1>
+      <div class="form">
+        <h2>{{superhero.name}}</h2>
+        <img class="superhero" src="{{superhero.imageUrl}}">
+        <form action='/heropowerdetach/{{superhero.id}}' method="POST">
+          <label for="heropower">Hero Power</label>
+          <select id="heropower" name="heropower">
+              {{#each heropowers}}
+          {{> heroPowerTemplate heropower=this}}
+        {{/each}}
+          </select>
+          <input type="submit" value="heropowerdetach">
+        </form>
+       {{#if superhero.heropowers.length}}
                 {{#each superhero.heropowers}}
                 {{> heroPowers heropower=this}}
                 {{/each}}
                 {{else}}
                 <h3 class="italic">This superhero doesn't have any super powers yet</h3>
                 {{/if}}
-            </div>
+        <a class="btn" href="/">Back</a>
+      </div>
     </main>
   </div>
   <footer>SUPERHEROES VS SUPERVILLAINS</footer>
+
 </body>
+
+</html>

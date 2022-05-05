@@ -28,11 +28,19 @@
   <form action='/herodelete/{{superhero.id}}' method="POST">
     <label for="name">Name</label>
     <input type="text" id="name" name="name" value="{{superhero.name}}" disabled="true"/>
-    <label for="name">Background</label>
-    <textarea id="name" name="background" disabled="true"/>{{superhero.background}}</textarea>
     <label for="image">ImageUrl</label>
     <input type="text" id="image" name="imageUrl" value="{{superhero.imageUrl}}" disabled="true"/>
-    </option>
+    <label for="age">Age</label>
+    <textarea id="age" name="age" disabled="true"/>{{superhero.age}}</textarea>
+     <label for="height">Height</label>
+    <textarea id="height" name="height" disabled="true"/>{{superhero.height}}</textarea>
+     <label for="weight">Weight</label>
+    <textarea id="weight" name="weight" disabled="true"/>{{superhero.weight}}</textarea>
+     <label for="gender">Gender</label>
+    <textarea id="gender" name="gender" disabled="true"/>{{superhero.gender}}</textarea>
+     <label for="affiliation">Affiliation</label>
+    <textarea id="affiliation" name="affiliatioin" disabled="true"/>{{superhero.affiliation}}</textarea>
+
     
     <input type="submit" value="herodelete">
   </form>

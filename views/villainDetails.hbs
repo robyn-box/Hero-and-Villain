@@ -29,11 +29,16 @@
       <h1>{{supervillain.name}}</h1>
       <img class="supervillain" src="{{supervillain.imageUrl}}">
       <div class="villaindetails">
-        <p><span>Background:</span> {{supervillain.background}}</p>
+        <p><span>Age</span> {{supervillain.age}}</p>
+        <p><span>Height</span> {{supervillain.height}}</p>
+        <p><span>Weight</span> {{supervillain.weight}}</p>
+        <p><span>Gender</span> {{supervillain.gender}}</p>
+        <p><span>Affiliation</span> {{supervillain.affiliation}}</p>
        
         <a class="btn" href="/">Back</a>
         {{#if matchedUser}}
         <a class="btn" href="/villainpowerattach/{{supervillain.id}}">Attach Power</a>
+          <a class="btn" href="/villainpowerdetach/{{supervillain.id}}">Detach Power</a>
         <a class="btn" href="/villainedit/{{supervillain.id}}">Edit Your Supervillain</a>
         <a class="btn" href="/villaindelete/{{supervillain.id}}">Delete Your Supervillain</a>
         {{/if}}
