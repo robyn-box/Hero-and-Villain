@@ -3,18 +3,21 @@ const Heropower = require('../models/Heropower');
 const router = express.Router()
 const Superhero = require('../models/Superhero')
 const getHeroById = require('../middleware/getHeroById')
+const verifyUser = require('../middleware/verifyUser')
 
 
-router.get("/:id", getHeroById, async function(req, res, next) {
+router.get("/:id", verifyUser, getHeroById, async function(req, res, next) {
+    let loggedIn = req.loggedIn;
+    if (loggedIn === true){
+        let superhero = res.superhero
+        
+        heropowers = await Heropower.find({})
+        // console.log(superhero, heropowers)
+        res.render('heropowerdetach', { superhero, heropowers, loggedIn})
 
-    let superhero = res.superhero
-    superhero = await Superhero.findById(superhero)
-    let heropowers = [];
-    heropowers = await Heropower.find({})
-    // console.log(superhero, heropowers)
-
-    
-    res.render('heropowerdetach', { superhero: superhero, heropowers: heropowers})
+    }  else {
+        res.redirect("/")
+    }  
 })
 
 router.post("/:id", getHeroById, async function (req, res, next) {
@@ -26,16 +29,19 @@ router.post("/:id", getHeroById, async function (req, res, next) {
     console.log("heropower",heropower)
     superhero = await Superhero.findById(id)
     console.log(superhero)
-    console.log("help",heropower.id)
-    console.log("what is going on", superhero.heropowers)
+    // console.log("????",heropower.id)
+    // console.log("!!!!", superhero.heropowers)
     
     
-    Superhero.findByIdAndUpdate(id, {$pull: {superhero: heropower.id}}).exec()
-  
+    // Superhero.findByIdAndUpdate(id, {$pull: {superhero: {heropowers: heropower.id}}}).exec()
+    superhero.heropowers.pull({_id: heropower.id})
+    console.log("updated", superhero)
+    superhero.save()
     
-    console.log("hero power detached",heropower._id)
+    // console.log("hero power detached",x)
     res.redirect("/")
 })
+
 
 
 
