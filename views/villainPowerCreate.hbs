@@ -1,45 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Villain Power Create</title>
-    <link href="/stylesheets/style.css" type="text/css" rel="stylesheet">
-    <link rel='shortcut icon' type='image/x-icon' href='#' />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+  <!-- Other CSS -->
+  <link href="/css/site.css" type="text/css" rel="stylesheet">
+  
+  <!-- Font Awesome Iocns cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
 </head>
-
-<body>
-    <div class="container">
-        <header>
-            <ul>
-                <li><a href="/">Browse</a></li>
-                <li><a href="/createhero">Create A Superhero</a></li>
-                <li><a href="/createvillain">Create A Supervillain</a></li>
-                <li><a href="/heropowercreate">Add A Hero Power</a></li>
-                <li><a href="/villainpowercreate">Add A Villain Power</a></li>
-            
-                <li><a href="">Login</a></li>
-                <li><a href="">Register</a></li>
+  <body>
+    <!--NAV BAR -->
+        <header class="header">
+          <a href="/" class="logo">
+            <i class="/img/logo.jpeg"></i>Superhero VS Villain
+          </a>
+          <nav class="navbar">
+            <a href="/">Home</a>
+            <!--Superhero -->
+            <li class="dropdown">
+              <a href="javascript:void(0)" class="dropbtn">Superhero</a>
+              <div class="dropdown-content">
+                <a href="/createHero">Create</a>
+                <a href="/heropowercreate">Power</a>
+              </div>
+            </li>
+            <!--Villain -->
+            <li class="dropdown">
+              <a href="javascript:void(0)" class="dropbtn">Villain</a>
+              <div class="dropdown-content">
+                <a href="/createvillain">Create</a>
+                <a href="/villainpowercreate">Power</a>
+              </div>
+            </li>
             </ul>
+            <a href="/users/register">Register</a>
+            <a href="/users/login">Login</a>
+            <a href="/users/logout">Logout</a>
+          </nav>
         </header>
-        <main>
-            <h1>Create A Villain Power</h1>
-            <div class="form">
-                <form action='/villainpowercreate' method="POST">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name">
-                    <label for="name">Description</label>
-                    <textarea id="name" name="description"></textarea>
-                    <label for="image">ImageUrl</label>
-                    <input type="text" id="image" name="imageUrl">
-                    
-                    <input type="submit" value="villainPowerCreate">
-                </form>
-            </div>
-        </main>
-    </div>
-    <footer>SUPERHEROES VS SUPERVILLAINS</footer>
+    <!--NAV BAR END -->
+<br>
+<br>
+<br>
+<br>
+<br>
+<h3>Create Villain Power</h3>
 
-</body>
+<div class="create-power">
 
+      <form action='/heropowercreate' method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name">
+
+        <label for="name">Description</label>
+        <textarea id="name" name="description"></textarea>
+
+        <label for="image">ImageUrl</label>
+        <input type="text" id="image" name="imageUrl">
+
+        <input type="submit" value="villainPowerCreate">
+      </form>
+</div> 
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  
+  </body>
 </html>

@@ -1,32 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <title>Register Page</title>
-  <link href="/stylesheets/site.css" type="text/css" rel="stylesheet">
-  <link rel='shortcut icon' type='image/x-icon' href='#' />
-</head>
+  <head>
+    <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+  <!-- Other CSS -->
+  <link href="/css/site.css" type="text/css" rel="stylesheet">
+
+    <title>Login Page</title>
+  </head>
 
 <body>
-  <div class="container">
-    <header>
-      <ul>
-             <li><a href="/">Browse</a></li>
-         <li><a href="/createhero">Create A Superhero</a></li>
-        <li><a href="/createvillain">Create A Supervillain</a></li>
-        <li><a href="/heropowercreate">Add A Hero Power</a></li>
-        <li><a href="/villainpowercreate">Add A Villain Power</a></li>
-    
-        <li><a href="">Login</a></li>
-        <li><a href="">Register</a></li>
-        
+  <!--NAV BAR -->
+        <header class="header">
+        <a href="/" class="logo">
+            <i class="/img/logo.jpeg"></i>Superhero VS Villain
+        </a>
+        <nav class="navbar">
+            <a href="/">Home</a>
+  <!--Superhero -->
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Superhero</a>
+          <div class="dropdown-content">
+            <a href="/createHero">Create</a>
+            <a href="/heropowercreate">Power</a>
+          </div>
+        </li>
+   <!--Villain -->
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Villain</a>
+          <div class="dropdown-content">
+            <a href="/createvillain">Create</a>
+            <a href="/villainpowercreate">Power</a>
+          </div>
+        </li>
       </ul>
+            <a href="/users/register">Register</a>
+            <a href="/users/login">Login</a>
+            <a href="/users/logout">Logout</a>
+        </nav>
     </header>
-    <main>
-	<h1>Register Form</h1>
-<div class="form">
-    <form action='/users/register' method="POST">
+    <!--NAV BAR END -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  <div class="signup-box">
+    <h1>Register</h1>
+      <form action='/users/register' method="POST">
         <label for="username">Username</label>
         <input type="text" id="username" name="username">
 
@@ -36,12 +63,60 @@
         <label for="repeatPassword">Re-Password</label>
         <input type="password" id="repeatPassword" name="repeatPassword">
         <input type="submit" value="Register">
-    </form>
-</div>
-    </main>
-  </div>
-  <footer>SUPERHEROES VS SUPERVILLAINS</footer>
+      </form>
 
-</body>
+    </div>
+    <p class="para-2">
+      Already have an account? <a href="/users/login">Login here</a>
+    </p>
+  </body>
 
 </html>
+
+
+
+
+
+
+
+
+{{!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Register</title>
+  
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link href="/css/site.css" type="text/css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="signup-box">
+      <h1>Register</h1>
+
+      <form action='/users/register' method="POST">
+        <label for="username">Username</label>
+        <input type="text" placeholder="" />
+
+        <label for="password">Password</label>
+        <input type="password" placeholder="" />
+
+        <label for="repeatPassword">Confirm Password</label>
+        <input type="password" id="repeatPassword" name="repeatPassword" />
+
+        <input type="submit" value="Register" />
+      </form>
+    </div>
+    <p class="para-2">
+      Already have an account? <a href="/users/login">Login here</a>
+    </p>
+  </body>
+
+</html>
+</body>
+
+</html> --}}
+
+
+
