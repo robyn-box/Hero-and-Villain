@@ -1,0 +1,59 @@
+.div{ 
+  font: 40px;
+  font-size: larger;
+  text-align: center;
+}
+div.container {
+  display: block;
+}
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /* background-image: url("https://th.bing.com/th/id/R.47bc6d32e60d207022d833aff32e31ba?rik=tZgoHUXemActRQ&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fJ07KWD6.jpg&ehk=0FiWxYV%2bzZcgZvlFU504QuT6I18FIrZo1UFo7xcT5cQ%3d&risl=&pid=ImgRaw&r=0"); */
+
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+a {
+  color: rgb(38, 0, 255);
+  font: 40px;
+}
+
+img.superhero {
+  display: block;
+  padding: 1px;
+  margin: 4px;
+  text-align: center;
+}
+
+img.supervillain {
+  display: block;
+  margin: 4px;
+  padding: 10px;
+  text-align: center;
+}
+
+img {
+  height: 200px;
+  width: 200px
+}
+div.superhero {
+  display: inline-block;
+  border: 1px solid #2b415433;
+  background: white;
+  width: 23%;
+  vertical-align: top;
+  margin-bottom: 4px;
+}
+
+div.supervillain {
+  display: inline-block;
+  border: 1px solid #2b415433;
+  background: white;
+  width: 23%;
+  vertical-align: top;
+  margin-bottom: 4px;
+}
+

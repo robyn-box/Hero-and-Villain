@@ -17,8 +17,8 @@ const supervillainSchema = new mongoose.Schema({
     },
     background: {
         type: String,
-        required: true,
-        minlength: [30, "Must be a minimum of 30 characters"],
+        required: false,
+        minlength: [10, "Must be a minimum of 30 characters"],
         match: [/^[\w+\d+/]+/, "Must be alphanumeric"]
     },
     villainpowers: [{type: mongoose.Schema.Types.ObjectId, ref: 'Villainpower'}],

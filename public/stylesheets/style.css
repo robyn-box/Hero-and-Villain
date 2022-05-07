@@ -1,57 +1,180 @@
+/* .search-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+*/
+
+
+.ul-home{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight:500;
+}
+
+.ul-details{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight:500;
+}
+
+.ul-details li{
+  color:darkslategrey;
+}
+
 .div{ 
   font: 40px;
   font-size: larger;
   text-align: center;
 }
-div.container {
-  display: block;
+
+a {
+  color: rgba(38, 0, 255, 0.869);
+  font-size: 1.2rem;
+}
+
+a.btn{
+  margin: 15px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: dimgrey;
+}
+
+a.btn.details-button{
+  /* this is  for details button on the indexpage/superheroTemplate */
+
+  /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+  color:darkred;
+}
+
+a.btn.back{
+  margin: 15px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: darkred;
+}
+
+a.btn.back:hover{
+  color: darkgreen;
+  /* color: rgba(195, 34, 34); */
+  /* font-weight: 550; */
 }
 
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  /* background-image: url("https://th.bing.com/th/id/R.47bc6d32e60d207022d833aff32e31ba?rik=tZgoHUXemActRQ&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fJ07KWD6.jpg&ehk=0FiWxYV%2bzZcgZvlFU504QuT6I18FIrZo1UFo7xcT5cQ%3d&risl=&pid=ImgRaw&r=0"); */
-
-  background-repeat: no-repeat;
-  background-position: center;
+  font: 1.5rem "Lucida Grande", Helvetica, Arial, sans-serif; 
 }
 
-a {
-  color: red;
-  font: 40px;
+div.container {
+  display: block;
 }
+
+h1{
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+color: darkslategrey;
+}
+
+h1#hero-details{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color:rgb(86, 29, 139);
+}
+
+h2{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color:saddlebrown;
+}
+
+h3.alert{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: italic;
+  color:crimson
+}
+
+hr {
+  border: none;
+  border-top: 3px double #333;
+  color: #333;
+  overflow: visible;
+  text-align: center;
+  height: 5px;
+}
+
+hr:after {
+  background: #fff;
+  content: '§';
+  padding: 0 4px;
+  position: relative;
+  top: -17px;
+}
+
+/* .hr-loggedin{
+  border: none;
+  border-top: 3px double #333;
+  color: #333;
+  overflow: visible;
+  text-align: center;
+  height: 5px;
+  } */
+
+li :hover{
+  color: darkslategrey;
+  /* color: rgba(195, 34, 34); */
+  font-weight: 550;
+}
+
 
 img.superhero {
-  display: block;
+  /* display: block;
+  padding: 1px;
   margin: 4px;
-  text-align: center;
+  text-align: center; */
+  display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	gap: 0.5rem;
+	margin-top: .5rem;
+  
 }
 
 img.supervillain {
-  display: block;
+  /* display: block;
   margin: 4px;
-  text-align: center;
+  padding: 10px;
+  text-align: center; */
+  display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	gap: 0.5rem;
+	margin-top: .5rem;
+  
 }
 
 img {
-  height: 200px;
-  width: 200px
+  height: 230px;
+  width: 230px
 }
+
 div.superhero {
+  
+  /* border: 1px solid #2b415433;
+  background: white; */
+  /* width: 23%; */
+  /* vertical-align: top; */
+  
   display: inline-block;
-  border: 1px solid #2b415433;
-  background: white;
-  width: 23%;
-  vertical-align: top;
-  margin-bottom: 4px;
+  border: 1px solid rgb(126, 42, 42);
+	background-color: rgb(238, 232, 232);
+	padding: 0.5rem;
+
+  margin: 5px;
 }
 
 div.supervillain {
+  
+  /* border: 1px solid #2b415433;
+  background: white; */
+  /* width: 23%; */
+  /* vertical-align: top; */
+
   display: inline-block;
-  border: 1px solid #2b415433;
-  background: white;
-  width: 23%;
-  vertical-align: top;
-  margin-bottom: 4px;
+  border: 1px solid  rgb(126, 42, 42);
+	background-color: rgb(238, 232, 232);
+	padding: 0.5rem;
+
+  margin: 5px;
 }
 

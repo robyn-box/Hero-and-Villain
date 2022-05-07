@@ -8,7 +8,9 @@ const verifyUser = require('../middleware/verifyUser')
 router.get('/', verifyUser, async function(req, res, next) {
   const superheroes = await Superhero.find({})
   const supervillains = await Supervillain.find({})
+  
   let loggedIn = req.loggedIn
+
   if (req.loggedIn === true) {
     console.log("User logged in")
     res.render('index', {superheroes, supervillains, loggedIn})

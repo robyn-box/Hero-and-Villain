@@ -12,14 +12,20 @@
     <div class="container">
         <header>
             <ul>
-                <li><a href="/">Browse</a></li>
-                <li><a href="/createHero">Create A Superhero</a></li>
-                <li><a href="/createvillain">Create A Supervillain</a></li>
+                {{#if loggedIn}}
+                <li><a href="/">Choose a different Hero</a></li>
                 <li><a href="/heropowercreate">Add A Hero Power</a></li>
                 <li><a href="/villainpowercreate">Add A Villain Power</a></li>
+
+                {{#else}}
             
                 <li><a href="">Login</a></li>
                 <li><a href="">Register</a></li>
+                
+                {{!-- I need an else if --}}
+                <li><a href="/createHero">Create A Superhero</a></li>
+                <li><a href="/createvillain">Create A Supervillain</a></li>
+                {{/if}}
             </ul>
         </header>
         <main>

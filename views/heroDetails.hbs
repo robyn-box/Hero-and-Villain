@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <title>SUPERHEROES VS SUPERVILLAINS</title>
@@ -18,10 +17,8 @@
         <li><a href="/createvillain">Create A Supervillain</a></li>
         <li><a href="/heropowercreate">Add A Hero Power</a></li>
         <li><a href="/villainpowercreate">Add A Villain Power</a></li>
-    
         <li><a href="">Login</a></li>
         <li><a href="">Register</a></li>
-        
       </ul>
       </ul>
     </header>
@@ -34,7 +31,6 @@
         <p><span>Weight</span> {{superhero.weight}}</p>
         <p><span>Gender</span> {{superhero.gender}}</p>
         <p><span>Affiliation</span> {{superhero.affiliation}}</p>
-       
         <a class="btn" href="/">Back</a>
         {{#if matchedUser}}
         <a class="btn" href="/heropowerattach/{{superhero._id}}">Attach Power</a>
@@ -44,7 +40,6 @@
         {{/if}}
       </div>
       <h2>Hero Powers</h2>
-               
                 {{#if superhero.heropowers.length}}
                 {{#each superhero.heropowers}}
                 {{> heroPowers heropower=this}}

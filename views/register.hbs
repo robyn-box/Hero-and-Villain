@@ -10,37 +10,42 @@
 
 <body>
   <div class="container">
+    
     <header>
-      <ul>
-             <li><a href="/">Browse</a></li>
-         <li><a href="/createhero">Create A Superhero</a></li>
-        <li><a href="/createvillain">Create A Supervillain</a></li>
+      <ul class="ul-home">
+        <li><a href="/">Go back to browse Current Heros</a></li>
+       {{#if loggedIn}}
+        <li><a href="/createhero">Create your Superhero</a></li>
+        <li><a href="/createvillain">Create your Supervillain</a></li>
         <li><a href="/heropowercreate">Add A Hero Power</a></li>
         <li><a href="/villainpowercreate">Add A Villain Power</a></li>
-    
-        <li><a href="">Login</a></li>
-        <li><a href="">Register</a></li>
-        
+        <li><a href="/users/logout">Logout</a></li>
+        <li><a href="/users/register">Register</a></li>
+        {{/if}}
+        <li><a href="/users/login">Login</a></li>
       </ul>
     </header>
+  <hr>
     <main>
-	<h1>Register Form</h1>
+	<h1>Register Name & Password</h1>
 <div class="form">
     <form action='/users/register' method="POST">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username">
+        <label for="username">Username</label><br>
+        <input type="text" id="username" name="username"><br><br>
 
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password">
+        <label for="password">Password</label><br>
+        <input type="password" id="password" name="password"><br><br>
 
-        <label for="repeatPassword">Re-Password</label>
-        <input type="password" id="repeatPassword" name="repeatPassword">
+        <label for="repeatPassword">Re-Password</label><br>
+        <input type="password" id="repeatPassword" name="repeatPassword"><br><br>
         <input type="submit" value="Register">
     </form>
 </div>
+<br>
+<hr>
     </main>
   </div>
-  <footer>SUPERHEROES VS SUPERVILLAINS</footer>
+  {{!-- <footer>SUPERHEROES VS SUPERVILLAINS</footer> --}}
 
 </body>
 
