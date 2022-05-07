@@ -15,12 +15,21 @@ const superheroSchema = new mongoose.Schema({
         required: true,
         match: [/^https?:\/\/.*/g, "Must be a valid web address"]
     },
-    background: {
-        type: String,
-        required: true,
-        minlength: [30, "Must be a minimum of 30 characters"],
-        match: [/^[\w+\d+/]+/, "Must be alphanumeric"]
+    age: {
+        type: Number,
+    },
+    height: {
+        type: Number,
     },    
+    weight: {
+        type: Number,
+    },
+    gender: {
+        type: String,
+    },
+    affiliation: {
+        type: String,
+    },
     heropowers: [{type: mongoose.Schema.Types.ObjectId, ref: 'Heropower'}],
     creatorId: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
 })

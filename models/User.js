@@ -4,6 +4,7 @@ const validator = require('validatorjs')
 
 const userSchema = new mongoose.Schema({
     username: {
+        
         type: String,
        minlength: [ 5, "Username must be at least 5 characters"],
        match: [/^[\w+\d+/]+/, "Must be alphanumeric"]
