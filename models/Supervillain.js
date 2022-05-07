@@ -15,11 +15,20 @@ const supervillainSchema = new mongoose.Schema({
         required: true,
         match: [/^https?:\/\/.*/g, "Must be a valid web address"]
     },
-    background: {
+    age: {
+        type: Number,
+    },
+    height: {
+        type: Number,
+    },    
+    weight: {
+        type: Number,
+    },
+    gender: {
         type: String,
-        required: true,
-        minlength: [30, "Must be a minimum of 30 characters"],
-        match: [/^[\w+\d+/]+/, "Must be alphanumeric"]
+    },
+    affiliation: {
+        type: String,
     },
     villainpowers: [{type: mongoose.Schema.Types.ObjectId, ref: 'Villainpower'}],
     creatorId: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
