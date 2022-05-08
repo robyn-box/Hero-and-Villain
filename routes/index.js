@@ -4,6 +4,12 @@ const Supervillain = require('../models/Supervillain')
 var router = express.Router();
 const verifyUser = require('../middleware/verifyUser')
 
+
+/* GET START page. */
+router.get('/start', verifyUser, async function (req, res, next) {
+  res.render('start')
+})
+
 /* GET home page. */
 router.get('/', verifyUser, async function (req, res, next) {
   res.render('start')

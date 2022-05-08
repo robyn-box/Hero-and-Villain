@@ -24,7 +24,7 @@ router.post('/', verifyUser, async function (req, res, next) {
     // console.log(verifiedUser.payload.id)
     console.log(req.body)
     
-    const { name, imageUrl, age, height, weight, gender, affiliation} = req.body
+    const { name, imageUrl, age, height, weight, gender} = req.body
     const aHero = new Superhero({
         name: req.body.name,
         imageUrl: req.body.imageUrl,
@@ -32,7 +32,7 @@ router.post('/', verifyUser, async function (req, res, next) {
         height: req.body.height,
         weight: req.body.weight,
         gender: req.body.gender,
-        affiliation: req.body.affiliation,
+        // affiliation: req.body.affiliation,
         heropowers: [],
         creatorId: verifiedUser.payload.id
         

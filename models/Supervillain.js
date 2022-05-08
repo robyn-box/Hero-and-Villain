@@ -27,9 +27,9 @@ const supervillainSchema = new mongoose.Schema({
     gender: {
         type: String,
     },
-    affiliation: {
-        type: String,
-    },
+    // affiliation: {
+    //     type: String,
+    // },
     villainpowers: [{type: mongoose.Schema.Types.ObjectId, ref: 'Villainpower'}],
     creatorId: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
 })

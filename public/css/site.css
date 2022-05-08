@@ -22,9 +22,21 @@ body{
   align-items: center;
 }
 
+h1 {
+    color: white
+}
+
+h2 {
+    color: white
+}
+
 h3 {
     text-align: center;
     color: white;
+}
+
+p {
+    color: white
 }
 
 
@@ -223,7 +235,7 @@ section{
 
 
     /* <!--Hero Links--> */
-    img.hero-links {
+    /* img.hero-links {
         border-radius: 50%;
       }
 
@@ -251,7 +263,7 @@ section{
         width: 23%;
         vertical-align: top;
         margin-bottom: 4px;
-      }
+      } */
 
     /* <!--Hero Links END--> */ 
 
@@ -367,3 +379,73 @@ section{
   }
 
  /* <!--NAV BAR END--> */ 
+
+
+  /* <!--Hero/Villain Grid--> */ 
+img.superhero {
+  display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	gap: 0.5rem;
+	margin-top: .5rem;
+  
+}
+
+img.supervillain {
+  display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	gap: 0.5rem;
+	margin-top: .5rem;
+  
+}
+
+img {
+  height: 150px;
+  width: 150px
+}
+  /* <!--Hero/Villain Grid END--> */ 
+
+  a {
+      color: red;
+  }
+
+input.btn {
+    background-color: red;
+}
+
+.attach-box {
+    width: 360px;
+    height: 120px;
+    margin: auto;
+    border-radius: 3px;
+    /* background-color: white; */
+  }
+
+  /* .dropdown {
+      display: inline-block
+  }
+
+  .attach-btn {
+      display: inline-block;
+  } */
+
+table {
+      display: inline-block;
+      align-items: center;
+  } 
+/* 
+  .attach {
+      display: table
+  }
+
+  .dropdown {
+      display: table-cell;
+      vertical-align: middle;
+  }
+
+  .attach-btn {
+    display: table-cell;
+    vertical-align: middle;
+} */
+
+
+
