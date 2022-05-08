@@ -2,7 +2,6 @@ const mongoose = require('mongoose')
 const validator = require('validatorjs')
 const Villainpower = require('./Villainpower')
 const User = require('./User')
-
 const supervillainSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -15,15 +14,22 @@ const supervillainSchema = new mongoose.Schema({
         required: true,
         match: [/^https?:\/\/.*/g, "Must be a valid web address"]
     },
-    background: {
+    age: {
+        type: Number,
+    },
+    height: {
+        type: Number,
+    },
+    weight: {
+        type: Number,
+    },
+    gender: {
         type: String,
-        required: false,
-        minlength: [10, "Must be a minimum of 30 characters"],
-        match: [/^[\w+\d+/]+/, "Must be alphanumeric"]
+    },
+    affiliation: {
+        type: String,
     },
     villainpowers: [{type: mongoose.Schema.Types.ObjectId, ref: 'Villainpower'}],
     creatorId: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
 })
-
-
 module.exports = mongoose.model("Supervillain", supervillainSchema)

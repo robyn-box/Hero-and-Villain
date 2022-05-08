@@ -38,7 +38,7 @@ a.btn{
 }
 
 a.btn.details-button{
-  /* this is  for details button on the indexpage/superheroTemplate */
+  /* this is for details button on the indexpage/superheroTemplate */
 
   /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
   color:darkred;
@@ -120,10 +120,6 @@ li :hover{
 
 
 img.superhero {
-  /* display: block;
-  padding: 1px;
-  margin: 4px;
-  text-align: center; */
   display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 	gap: 0.5rem;
@@ -132,10 +128,6 @@ img.superhero {
 }
 
 img.supervillain {
-  /* display: block;
-  margin: 4px;
-  padding: 10px;
-  text-align: center; */
   display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 	gap: 0.5rem;
@@ -149,12 +141,7 @@ img {
 }
 
 div.superhero {
-  
-  /* border: 1px solid #2b415433;
-  background: white; */
-  /* width: 23%; */
-  /* vertical-align: top; */
-  
+ 
   display: inline-block;
   border: 1px solid rgb(126, 42, 42);
 	background-color: rgb(238, 232, 232);
