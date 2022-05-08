@@ -13,9 +13,7 @@ router.get("/:id", verifyUser, getVillainById, async function (req, res, next) {
         // supervillain = await Supervillain.findById(supervillain)
         let villainpowers =  await Villainpower.find({})
         // console.log(supervillain, villainpowers)
-        
         res.render('villainpowerattach', {supervillain, villainpowers, loggedIn})
-
     } else {
         res.redirect("/")
     }
@@ -32,7 +30,7 @@ router.post("/:id", getVillainById, async function (req, res, next) {
     
     Supervillain.findByIdAndUpdate(id, {$push: {villainpowers: villainpower}}).exec()
     console.log("villain power attached", supervillain)
-    res.redirect("/")
+    res.redirect("/index")
 })
 
 

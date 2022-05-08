@@ -46,7 +46,7 @@ router.post('/', verifyUser, async function (req, res, next) {
         } else {
             console.log(aHero)
             console.log("Hero Created")
-            res.redirect("/")
+            res.redirect("/index")
         }
     })
 })
