@@ -65,11 +65,9 @@ router.get('/login', async function(req, res, next) {
 })
 
 router.post("/login", verifyToken, async function(req, res, next) {
-  
-
   let verifyToken = req.loggedIn
   console.log(token)
-  res.redirect("/")
+  res.redirect("/index")
 })
     
 router.get('/logout', function(req, res) {

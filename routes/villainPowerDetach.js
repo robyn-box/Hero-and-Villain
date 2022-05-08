@@ -32,14 +32,12 @@ router.post("/:id", getVillainById, async function (req, res, next) {
     // console.log("????",villainpower.id)
     // console.log("!!!!", supervillain.villainpowers)
     
-    
-    // Supervillain.findByIdAndUpdate(id, {$pull: {supervillain: {villainpowers: villainpower.id}}}).exec()
     supervillain.villainpowers.pull({_id: villainpower.id})
     console.log("updated", supervillain)
     supervillain.save()
     
     // console.log("villain power detached",x)
-    res.redirect("/")
+    res.redirect("/index")
 })
 
 
