@@ -40,7 +40,7 @@ router.post('/', verifyUser, async function (req, res, next) {
             res.render('index', {message: err})
         } else {
             console.log("Villain Created")
-            res.redirect('/')
+            res.redirect('/index')
         }
     })
 })

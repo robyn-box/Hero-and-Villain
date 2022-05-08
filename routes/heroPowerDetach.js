@@ -16,7 +16,7 @@ router.get("/:id", verifyUser, getHeroById, async function(req, res, next) {
         res.render('heropowerdetach', { superhero, heropowers, loggedIn})
 
     }  else {
-        res.redirect("/")
+        res.redirect("/index")
     }  
 })
 
@@ -29,17 +29,13 @@ router.post("/:id", getHeroById, async function (req, res, next) {
     console.log("heropower",heropower)
     superhero = await Superhero.findById(id)
     console.log(superhero)
-    // console.log("????",heropower.id)
-    // console.log("!!!!", superhero.heropowers)
-    
-    
     // Superhero.findByIdAndUpdate(id, {$pull: {superhero: {heropowers: heropower.id}}}).exec()
     superhero.heropowers.pull({_id: heropower.id})
     console.log("updated", superhero)
     superhero.save()
     
     // console.log("hero power detached",x)
-    res.redirect("/")
+    res.redirect("/index")
 })
 
 

@@ -11,7 +11,10 @@ router.get('/start', verifyUser, async function (req, res, next) {
 })
 
 /* GET home page. */
-router.get('/', verifyUser, async function(req, res, next) {
+router.get('/', verifyUser, async function (req, res, next) {
+  res.render('start')
+})
+router.get('/index', verifyUser, async function(req, res, next) {
   const superheroes = await Superhero.find({})
   const supervillains = await Supervillain.find({})
   let loggedIn = req.loggedIn

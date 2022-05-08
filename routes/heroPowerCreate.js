@@ -2,9 +2,16 @@ const express = require('express')
 const router = express.Router()
 const Superhero = require('../models/Superhero')
 const Heropower = require('../models/Heropower')
+const verifyUser = require('../middleware/verifyUser')
 
-router.get('/', function (req, res) {
-    res.render('heropowercreate')
+router.get('/', verifyUser, async function (req, res, next) {
+    let loggedIn = req.loggedIn 
+    if(loggedIn === true) {
+        res.render('heropowercreate')
+
+    } else {
+        res.redirect("/")
+    }
 })
 
 router.post('/', function (req, res) {
@@ -24,7 +31,7 @@ router.post('/', function (req, res) {
             return res.render("index", {message: err})
         } else {
             console.log("Hero Power Created")
-            res.redirect("/")
+            res.redirect("/index")
         }
     })
 })
