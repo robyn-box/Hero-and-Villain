@@ -51,30 +51,25 @@
         </nav>
     </header>
  <!-- NAV BAR END-->
-<br>
     <section class="home">
         <div class="max-width">
             <div class="home-content">
-              <h2>Superheros</h2>
-              <br>
-                {{#each superheroes}}
-                {{> superheroTemplate superhero=this}}
-                {{/each}}
-              
-              <br>
-              <br>
-              <h2>Supervillains</h2>
-              <br>
-              <br>
-
-
-                {{#each supervillains}}
-                {{> supervillainTemplate supervillain=this}}
-                {{/each}}
-            
+                <h3>Superhero <br> VS <br> Villain</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, numquam, sequi assumenda nam, vel nihil repudiandae omnis eveniet est excepturi atque molestias at dolores fugit!</p>
+                <a class="btn" href="/users/register" >Register</a>
+                <p class="para-2">
+                  Already have an account? <a href="/users/login">Login here</a>
+                </p>
             </div>
 
-            
+            <div>
+                      {{!-- {{#each superheroes}}
+                      {{> superheroTemplate superhero=this}}
+                      {{/each}}
+               --}}
+
+            </div>
+              
        
               
             {{!-- <div class="home-image">

@@ -24,6 +24,8 @@ const heroeditrouter = require('./routes/heroedit')
 const villaineditrouter = require('./routes/villainedit')
 const herodeleterouter = require('./routes/herodelete')
 const villaindeleterouter = require('./routes/villaindelete')
+const heropowerdetachrouter = require('./routes/heropowerdetach')
+const villainpowerdetachrouter = require('./routes/villainpowerdetach')
 
 const app = express();
 
@@ -64,6 +66,11 @@ app.use('/heroedit', heroeditrouter)
 app.use('/villainedit', villaineditrouter)
 app.use('/herodelete', herodeleterouter)
 app.use('/villaindelete', villaindeleterouter)
+app.use('/villainpowerdetach', villainpowerdetachrouter)
+app.use('/heropowerdetach', heropowerdetachrouter)
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

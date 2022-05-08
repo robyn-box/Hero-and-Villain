@@ -16,13 +16,16 @@
 </head>
   <body>
 <!--NAV BAR -->
-    <header class="header">
+  <header class="header">
+      
         <a href="/" class="logo">
             <i class="/img/logo.jpeg"></i>Superhero VS Villain
         </a>
         <nav class="navbar">
             <a href="/">Home</a>
   <!--Superhero -->
+  {{#if loggedIn}}
+    <ul>
         <li class="dropdown">
           <a href="javascript:void(0)" class="dropbtn">Superhero</a>
           <div class="dropdown-content">
@@ -30,7 +33,7 @@
             <a href="/heropowercreate">Power</a>
           </div>
         </li>
-   <!--Villain -->
+   {{!-- <!--Villain -->
         <li class="dropdown">
           <a href="javascript:void(0)" class="dropbtn">Villain</a>
           <div class="dropdown-content">
@@ -38,10 +41,13 @@
             <a href="/villainpowercreate">Power</a>
           </div>
         </li>
-      </ul>
+      </ul> --}}
+            <a href="/users/logout">Logout</a>
+  
+          {{else}}
             <a href="/users/register">Register</a>
             <a href="/users/login">Login</a>
-            <a href="/users/logout">Logout</a>
+    {{/if}}  
         </nav>
     </header>
  <!--NAV BAR END -->
@@ -53,7 +59,7 @@
 
 
 <div class="create-hero-villain">
-   <h3>Create a Hero</h3>
+   <h3 class="form-title">Create a Hero</h3>
       <form action='/createhero' method="POST"">
         <label for="name">Hero Name</label>
         <input type="text" id="name" name="name">
