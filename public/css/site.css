@@ -23,7 +23,7 @@ body{
 }
 
 h1 {
-    color: white
+    color: black
 }
 
 h2 {
@@ -32,7 +32,7 @@ h2 {
 
 h3 {
     text-align: center;
-    color: white;
+    color: black;
 }
 
 p {
@@ -283,10 +283,10 @@ section{
         border-radius: 3px;
         
       }
-
+   
       .create-power {
         width: 360px;
-        height: 375px;
+        height: 350px;
         margin: auto;
         background-color: white;
         border-radius: 3px;
@@ -330,7 +330,7 @@ section{
         height: 35px;
         margin-top: 20px;
         border: none;
-        background-color: #49c1a2;
+        background-color:red;
         color: white;
         font-size: 18px;
       }
@@ -420,6 +420,14 @@ input.btn {
     /* background-color: white; */
   }
 
+  .detach-box {
+    width: 360px;
+    height: 120px;
+    margin: auto;
+    border-radius: 3px;
+    /* background-color: white; */
+  }
+
   /* .dropdown {
       display: inline-block
   }
@@ -447,5 +455,58 @@ table {
     vertical-align: middle;
 } */
 
+h3.heroPower-name {
+  color: white;
+}
 
+h3.detach {
+  color: white;
+}
 
+h3.heroName {
+  color: white;
+}
+
+.edit {
+  width: 360px;
+  height: 715px;
+  margin: auto;
+  background-color: white;
+  border-radius: 3px;
+  
+}
+
+.delete {
+  width: 360px;
+  height: 120px;
+  margin: auto;
+  border-radius: 3px;
+  /* background-color: white; */
+}
+
+h1.villain {
+  color: white;
+}
+
+h1.hero {
+  color: white;
+}
+
+/* #notifications {
+  margin: 0 auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+  width: 50%;
+  padding: 0.5%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  background: rgb(231, 118, 118);
+  color: white;
+  border-radius: 5px;
+} */
+
+h2.error {
+  color: yellow
+
+}
