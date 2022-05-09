@@ -62,10 +62,24 @@
 
         <input type="submit" value="Login" />
       </form>
+      {{#if message}}
+      <div>
+        {{message}}
+        </div>
+        {{/if}}
+      </div>
     </div>
     <p class="para-2">
       Not have an account? <a href='/users/register'>Sign Up Here</a>
     </p>
+    <br>
+    <br>
+
+     {{#if message}}
+      <div class="error">
+        <h2 class="error">{{message}}</h2>
+      </div>
+      {{/if}}
   </body>
 
 </html>

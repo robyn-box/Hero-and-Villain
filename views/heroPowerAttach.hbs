@@ -18,7 +18,7 @@
  <!-- NAV BAR -->
     <header class="header">
       
-        <a href="/" class="logo">
+        <a href="/index" class="logo">
             <i class="/img/logo.jpeg"></i>Superhero VS Villain
         </a>
         <nav class="navbar">
@@ -51,124 +51,39 @@
         </nav>
     </header>
  <!-- NAV BAR END-->
-  <body>
-    <br>
-    <br>
-    <br>
-    <div class="wrapper">
-      <h1>{{superhero.name}}</h1>
-      <br>
-        <div>
-          <img class="heropower" src="{{superhero.imageUrl}}">
-          <br>
-          <br>
-          <br>
-          <div class="attach-box">
-          <form action='/heropowerattach/{{superhero.id}}' method="POST">
-        {{!-- <table>
-          <tr>
-            <td><select id="heropower" name="heropower">
-              {{#each heropowers}}
-              {{> heroPowerTemplate heropower=this}}
-              {{/each}}
-            </select></td>
-            <td><input class="btn" type="submit" value="heropowerattach"></td>
-          <tr>
-        </table> --}}
-            {{!-- <label for="heropower">Hero Power</label> --}}
-        <div class="attach">
-            <div class="attach-btn">
-               <input class="btn" type="submit" value="heropowerattach">
-            </div> 
-            <br>
-            <div class="dropdown">
-              <select id="heropower" name="heropower">
-                {{#each heropowers}}
-                {{> heroPowerTemplate heropower=this}}
-                {{/each}}
-              </select>
-            </div> 
-          </div>
-          
-          </form>
-          </div>
-          <br>
-
-          {{#if superhero.heropowers.length}}
-          {{#each superhero.heropowers}}
-          {{> heroPowers heropower=this}}
-          {{/each}}
-          {{else}}
-          <h3 class="italic">This superhero doesn't have any super powers yet</h3>
-          {{/if}}
-          <a class="btn" href="/">Back</a>
-
-       
-    
-        
-      
-      </div>
-    </div>
-  </body>
-</html>
-
-
-
-
-
-
-{{!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <title>Attach A Hero Power</title>
-  <link href="/stylesheets/style.css" type="text/css" rel="stylesheet">
-  <link rel='shortcut icon' type='image/x-icon' href='#' />
-</head>
-
-<body>
-  <h1>SUPERHERO VS SUPERVILLAIN</h1>
-  <div class="container">
-    <header>
-      <ul>
-       <li><a href="/">Browse</a></li>
-        <li><a href="/createhero">Create A Superhero</a></li>
-        <li><a href="/createvillain">Create A Supervillain</a></li>
-        <li><a href="/heropowercreate">Add A Hero Power</a></li>
-        <li><a href="/villainpowercreate">Add A Villain Power</a></li>
-    
-        <li><a href="">Login</a></li>
-        <li><a href="">Register</a></li>
-      </ul>
-    </header>
-    <main>
-      <h1>Attach a new hero power</h1>
-      <div class="form">
+ <br>
+ <br>
+ <br>
+    <body>
+      <h1>Attach Hero Power</h1>
+      <div class="attach-box">
         <h2>{{superhero.name}}</h2>
         <img class="heropower" src="{{superhero.imageUrl}}">
         <form action='/heropowerattach/{{superhero.id}}' method="POST">
-          <label for="heropower">Hero Power</label>
+         <br>
+          <input type="submit" value="Hero Power Attach">
+          <br>
+          <br>
           <select id="heropower" name="heropower">
-              {{#each heropowers}}
-          {{> heroPowerTemplate heropower=this}}
-        {{/each}}
+            {{#each heropowers}}
+            {{> heroPowerTemplate heropower=this}}
+            {{/each}}
           </select>
-          <input type="submit" value="heropowerattach">
         </form>
-          {{#if superhero.heropowers.length}}
-                {{#each superhero.heropowers}}
-                {{> heroPowers heropower=this}}
-                {{/each}}
-                {{else}}
-                <h3 class="italic">This superhero doesn't have any super powers yet</h3>
-                {{/if}}
+        {{#if superhero.heropowers.length}}
+        {{#each superhero.heropowers}}
+        {{> heroPowers heropower=this}}
+        {{/each}}
+        {{else}}
+        <h3 class="italic">This superhero doesn't have any super powers yet</h3>
+        {{/if}}
         <a class="btn" href="/">Back</a>
+
       </div>
-    </main>
-  </div>
-  <footer>SUPERHEROES VS SUPERVILLAINS</footer>
+    </body>
+    </html>
 
-</body>
 
-</html> --}}
+
+
+ 

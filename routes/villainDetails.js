@@ -31,9 +31,4 @@ router.get("/:id", verifyUser, getVillainById, async function (req, res, next) {
 
 })
 
-
-
-
-
-
 module.exports = router;
