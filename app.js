@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config()
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -9,6 +9,7 @@ const hbs = require('hbs')
 const saltRounds = +process.env.SALT
 const secret = process.env.SECRET
 
+const startrouter = require('./routes/start')
 const indexRouter = require('./routes/index');
 const aboutRouter = require('./routes/about');
 const usersRouter = require('./routes/users');
@@ -24,8 +25,6 @@ const heroeditrouter = require('./routes/heroedit')
 const villaineditrouter = require('./routes/villainedit')
 const herodeleterouter = require('./routes/herodelete')
 const villaindeleterouter = require('./routes/villaindelete')
-const heropowerdetachrouter = require('./routes/heropowerdetach')
-const villainpowerdetachrouter = require('./routes/villainpowerdetach')
 
 const app = express();
 
@@ -51,7 +50,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
+app.use('/', startrouter)
+app.use('/index', indexRouter);
 app.use('/users', usersRouter);
 app.use('/about', aboutRouter);
 app.use('/createhero', createherorouter);
@@ -66,11 +66,6 @@ app.use('/heroedit', heroeditrouter)
 app.use('/villainedit', villaineditrouter)
 app.use('/herodelete', herodeleterouter)
 app.use('/villaindelete', villaindeleterouter)
-app.use('/villainpowerdetach', villainpowerdetachrouter)
-app.use('/heropowerdetach', heropowerdetachrouter)
-
-
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
