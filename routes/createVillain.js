@@ -29,7 +29,6 @@ router.post('/', verifyUser, async function (req, res, next) {
         height: req.body.height,
         weight: req.body.weight,
         gender: req.body.gender,
-        // affiliation: req.body.affiliation,
         villainpowers: [],
         creatorId: verifiedUser.payload.id
     })

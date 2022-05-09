@@ -19,14 +19,14 @@ router.post('/register', async function (req, res, next) {
   const {username, password, repeatPassword} = req.body
 
   if(username === "" || password === "") {
-    return res.status(400).json({message: "Please Complete Form!"})
+    return res.render('register', {message: "Please Complete Form!"})
   } 
   const tempUser = await User.findOne({username: username})
   if (tempUser) {
-    return res.status(400).json({message: "Please Pick Another Username!"})
+    return res.render('register', {message: "Please Pick Another Username!"})
   }
   if (password != repeatPassword) {
-    return res.status(400).json({message: "Passwords Do Not Match!"})
+    return res.render('register', {message: "Passwords Do Not Match!"})
   
   } else {
     // Create a new user

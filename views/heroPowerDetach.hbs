@@ -1,41 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <title>Attach A Hero Power</title>
-  <link href="/stylesheets/style.css" type="text/css" rel="stylesheet">
-  <link rel='shortcut icon' type='image/x-icon' href='#' />
-</head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+  <!-- Other CSS -->
+  <link href="/css/site.css" type="text/css" rel="stylesheet">
+  
+  <!-- Font Awesome Iocns cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+</head>
 <body>
-  <h1>SUPERHERO VS SUPERVILLAIN</h1>
-  <div class="container">
-    <header>
-      <ul>
-       <li><a href="/">Browse</a></li>
-        <li><a href="/createhero">Create A Superhero</a></li>
-        <li><a href="/createvillain">Create A Supervillain</a></li>
-        <li><a href="/heropowercreate">Add A Hero Power</a></li>
-        <li><a href="/villainpowercreate">Add A Villain Power</a></li>
-    
-        <li><a href="">Login</a></li>
-        <li><a href="">Register</a></li>
+ <!-- NAV BAR -->
+    <header class="header">
+      
+        <a href="/index" class="logo">
+            <i class="/img/logo.jpeg"></i>Superhero VS Villain
+        </a>
+        <nav class="navbar">
+            <a href="">Home</a>
+  <!--Superhero -->
+  {{#if loggedIn}}
+    <ul>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Superhero</a>
+          <div class="dropdown-content">
+            <a href="/createHero">Create</a>
+            <a href="/heropowercreate">Power</a>
+          </div>
+        </li>
+   <!--Villain -->
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Villain</a>
+          <div class="dropdown-content">
+            <a href="/createvillain">Create</a>
+            <a href="/villainpowercreate">Power</a>
+          </div>
+        </li>
       </ul>
+            <a href="/users/logout">Logout</a>
+  
+          {{else}}
+            <a href="/users/register">Register</a>
+            <a href="/users/login">Login</a>
+    {{/if}}  
+        </nav>
     </header>
-    <main>
-      <h1>Detach a new hero power</h1>
-      <div class="form">
+ <!-- NAV BAR END-->
+ <br>
+ <br>
+ <br>
+ <body>
+    <h1>Detach Hero Power</h1>
+      <div class="detach-box">
         <h2>{{superhero.name}}</h2>
-        <img class="superhero" src="{{superhero.imageUrl}}">
+        <img class="heropower" src="{{superhero.imageUrl}}">
         <form action='/heropowerdetach/{{superhero.id}}' method="POST">
-          <label for="heropower">Hero Power</label>
+        <br>
+        <input type="submit" value="Hero Power Detach">
+        <br>
+        <br>
           <select id="heropower" name="heropower">
               {{#each heropowers}}
           {{> heroPowerTemplate heropower=this}}
         {{/each}}
-          </select>
-          <input type="submit" value="heropowerdetach">
+          </select>  
         </form>
        {{#if superhero.heropowers.length}}
                 {{#each superhero.heropowers}}
@@ -46,10 +79,7 @@
                 {{/if}}
         <a class="btn" href="/">Back</a>
       </div>
-    </main>
-  </div>
-  <footer>SUPERHEROES VS SUPERVILLAINS</footer>
-
-</body>
-
+ </body>
 </html>
+
+

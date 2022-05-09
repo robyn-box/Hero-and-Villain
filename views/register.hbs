@@ -64,11 +64,18 @@
         <input type="password" id="repeatPassword" name="repeatPassword">
         <input type="submit" value="Register">
       </form>
-
     </div>
     <p class="para-2">
       Already have an account? <a href="/users/login">Login here</a>
     </p>
+    <br>
+    <br>
+
+     {{#if message}}
+      <div class="error">
+        <h2 class="error">{{message}}</h2>
+      </div>
+      {{/if}}
   </body>
 
 </html>

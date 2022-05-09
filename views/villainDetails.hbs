@@ -1,60 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <title>SUPERHEROES VS SUPERVILLAINS</title>
-  <link href="/stylesheets/style.css" type="text/css" rel="stylesheet">
-  <link rel='shortcut icon' type='image/x-icon' href='#' />
-</head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+  <!-- Other CSS -->
+  <link href="/css/site.css" type="text/css" rel="stylesheet">
+  
+  <!-- Font Awesome Iocns cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+</head>
 <body>
-  <h1>SUPERHERO VS SUPERVILLAIN</h1>
-  <div class="container">
-    <header>
-      <ul>
-       <li><a href="/">Browse</a></li>
-        <li><a href="/createhero">Create A Superhero</a></li>
-        <li><a href="/createvillain">Create A Supervillain</a></li>
-        <li><a href="/heropowercreate">Add A Hero Power</a></li>
-        <li><a href="/villainpowercreate">Add A Villain Power</a></li>
-    
-        <li><a href="">Login</a></li>
-        <li><a href="">Register</a></li>
-        
+ <!-- NAV BAR -->
+    <header class="header">
+      
+        <a href="/" class="logo">
+            <i class="/img/logo.jpeg"></i>Superhero VS Villain
+        </a>
+        <nav class="navbar">
+            <a href="">Home</a>
+  <!--Superhero -->
+  {{#if loggedIn}}
+    <ul>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Superhero</a>
+          <div class="dropdown-content">
+            <a href="/createHero">Create</a>
+            <a href="/heropowercreate">Power</a>
+          </div>
+        </li>
+   <!--Villain -->
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Villain</a>
+          <div class="dropdown-content">
+            <a href="/createvillain">Create</a>
+            <a href="/villainpowercreate">Power</a>
+          </div>
+        </li>
       </ul>
-      </ul>
+            <a href="/users/logout">Logout</a>
+  
+          {{else}}
+            <a href="/users/register">Register</a>
+            <a href="/users/login">Login</a>
+    {{/if}}  
+        </nav>
     </header>
-    <main>
-      <h1>{{supervillain.name}}</h1>
-      <img class="supervillain" src="{{supervillain.imageUrl}}">
-      <div class="villaindetails">
+ <!-- NAV BAR END-->
+  <body>
+    <br>
+    <br>
+    <br>
+    <div class="wrapper">
+      <h1 class="villain">{{supervillain.name}}</h1>
+      <br>
+      <div class="about-section">
+        <img src="{{supervillain.imageUrl}}" />
+        <p>
         <p><span>Age</span> {{supervillain.age}}</p>
         <p><span>Height</span> {{supervillain.height}}</p>
         <p><span>Weight</span> {{supervillain.weight}}</p>
         <p><span>Gender</span> {{supervillain.gender}}</p>
-        <p><span>Affiliation</span> {{supervillain.affiliation}}</p>
-       
-        <a class="btn" href="/">Back</a>
+       <br>
+        <div>
         {{#if matchedUser}}
-        <a class="btn" href="/villainpowerattach/{{supervillain.id}}">Attach Power</a>
-          <a class="btn" href="/villainpowerdetach/{{supervillain.id}}">Detach Power</a>
-        <a class="btn" href="/villainedit/{{supervillain.id}}">Edit Your Supervillain</a>
-        <a class="btn" href="/villaindelete/{{supervillain.id}}">Delete Your Supervillain</a>
+        <a href="/villainpowerattach/{{supervillain.id}}" class="card-link">Attach Power</a>
+        <a href="/villainpowerdetach/{{supervillain.id}}" class="card-link">Detach Power</a>
+        <a href="/villainedit/{{supervillain.id}}" class="card-link">Edit Supervillain</a>
+        <a href="/villaindelete/{{supervillain.id}}" class="card-link">Delete Supervillain</a>
         {{/if}}
+        </div>
+        <br>
+
+        <div>
+          {{#if supervillain.villainpowers.length}}
+          {{#each supervillain.villainpowers}}
+          {{> villainPowers villainpower=this}}
+          {{/each}}
+          {{else}}
+          <h3 class="italic">This supervillain doesn't have any super powers yet</h3>
+          {{/if}}
+        </div>
+          <a class="btn" href="/index">Back</a>
+        </p>
       </div>
-      <h2>Villain Powers</h2>
-               
-                {{#if supervillain.villainpowers.length}}
-                {{#each supervillain.villainpowers}}
-                {{> villainPowers villainpower=this}}
-                
-                {{/each}}
-                {{else}}
-                <h3 class="italic">This supervillain doesn't have any super powers yet</h3>
-                {{/if}}
-            </div>
-    </main>
-  </div>
-  <footer>SUPERHEROES VS SUPERVILLAINS</footer>
-</body>
+    </div>
+  </body>
+

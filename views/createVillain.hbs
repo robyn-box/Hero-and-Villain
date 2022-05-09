@@ -1,6 +1,6 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,25 +14,25 @@
   <!-- Font Awesome Iocns cdn link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
 </head>
-  <body>
-<!--NAV BAR -->
-     <header class="header">
+<body>
+ <!-- NAV BAR -->
+<header class="header">
       
-        <a href="/" class="logo">
+        <a href="/index" class="logo">
             <i class="/img/logo.jpeg"></i>Superhero VS Villain
         </a>
         <nav class="navbar">
-            <a href="/">Home</a>
+            <a href="/index">Gallery</a>
   <!--Superhero -->
   {{#if loggedIn}}
-    {{!-- <ul>
+    <ul>
         <li class="dropdown">
           <a href="javascript:void(0)" class="dropbtn">Superhero</a>
           <div class="dropdown-content">
             <a href="/createHero">Create</a>
             <a href="/heropowercreate">Power</a>
           </div>
-        </li> --}}
+        </li>
    <!--Villain -->
         <li class="dropdown">
           <a href="javascript:void(0)" class="dropbtn">Villain</a>
@@ -56,12 +56,10 @@
   <br>
   <br>
   <br>
- <h3>Create a Villain</h3>
-
 <div class="create-hero-villain">
-
-      <form action='/createhero' method="POST"">
-        <label for="name">Villain Name</label>
+   <h3 class="form-title">Create a Villain</h3>
+      <form action='/createvillain' method="POST"">
+        <label for="name">Hero Name</label>
         <input type="text" id="name" name="name">
 
         <label for="image">ImageUrl</label>
@@ -82,7 +80,7 @@
           <option value="female">Female</option>
         </select>
 
-        <input type="submit" value="createvillain">
+        <input type="submit" value="Create Villain">
       </form>
 </div> 
   <!-- Optional JavaScript -->
@@ -93,3 +91,10 @@
   
   </body>
 </html>
+
+
+
+
+
+
+

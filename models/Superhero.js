@@ -27,9 +27,6 @@ const superheroSchema = new mongoose.Schema({
     gender: {
         type: String,
     },
-    // affiliation: {
-    //     type: String,
-    // },
     heropowers: [{type: mongoose.Schema.Types.ObjectId, ref: 'Heropower'}],
     creatorId: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
 })
