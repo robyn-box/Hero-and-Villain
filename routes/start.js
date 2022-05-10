@@ -9,3 +9,7 @@ const verifyUser = require('../middleware/verifyUser')
 router.get('/', verifyUser, async function (req, res, next) {
   res.render('start')
 })
+
+
+
+module.exports = router
